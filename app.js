@@ -1,4 +1,6 @@
 // app.js
+let config = require('./keys')
+
 App({
   onLaunch() {
     wx.BaaS = requirePlugin('sdkPlugin')
@@ -7,8 +9,7 @@ App({
      wx.getUserInfo,
      wx.requestPayment)
 
-    let clientID = '86e9cea993a138b9109a'  // 应用名称: 我们的团队的第一个小程序
-    wx.BaaS.init(clientID)
+    wx.BaaS.init(config.appKey)
 
     const self = this
     wx.BaaS.auth.getCurrentUser().then(res => {

@@ -1,7 +1,6 @@
 // index.js
 // 获取应用实例
 const app = getApp();
-
 Page({
   data: {
     restaurants: [],
@@ -13,7 +12,6 @@ Page({
     const self = this;
     console.log("this one is first");
     let Restaurants = new wx.BaaS.TableObject("restaurants_sp21");
-
     Restaurants.find().then(
       (res) => {
         // success function
